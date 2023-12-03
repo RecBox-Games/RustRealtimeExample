@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles/name.css">
+    <link rel="stylesheet" href="styles/wait.css">
+    <link rel="stylesheet" href="styles/join.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" /> 
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <title>GameNite Controlpad</title>
+    <style>
+      html,
+
+      p {
+          margin: 5px;
+      }
+      textarea {
+          margin: 0px;
+          padding: 0px;
+      }
+      
+      body {
+          background-image: url('resources/bg2.png'); /* Path to your image */
+          background-size: cover; /* Cover the entire page */
+          background-repeat: no-repeat; /* Do not repeat the image */
+          background-position: center; /* Center the image on the page */
+          /**/
+          touch-action: none;
+          overflow: hidden;
+          width: 100vw;
+          height: 100vh;
+          left: 0%;
+          top: 0%;
+          margin: 0;
+          padding: 0;
+          touch-action: none;
+          font-size: 20px;
+          font-family: Arial;
+      }
+
+      .box-div {
+          display: none;
+          position: absolute;
+          top: 53%;
+          left: 50%;
+          width: 85%;
+          height: 75%;
+          transform: translate(-50%, -50%);
+          z-index: 10;  /* To ensure the prompt box is above the canvas */
+          background: #dddddd;
+          border: 3px solid #111111; /* Remove default border */
+          border-radius: 8px; /* Rounded corners */
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .main-button {
+          position: absolute;
+          background-color: #b3c4d5; 
+          color: black; 
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px; 
+          font-weight: bold;
+          cursor: pointer; 
+          border: 3px solid #000000; 
+          border-radius: 8px; 
+          transition: background-color 0.2s; 
+          margin: 0;
+          padding: 0;
+      }
+
+      div {
+          margin: 0px;
+          padding: 0px;
+      }
+
+      div#cardDiv {
+          position: absolute;
+          top: 44%;
+          left: 50%;
+          width: 90%;
+          height: 50%;
+          transform: translate(-50%, -50%);
+      }
+
+      .playing-card {
+          position: absolute;
+          width: 10%;
+          height: 96%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- name header -->
+    <div id="nameBox" style="display: none">
+      <p id="nameLine">placeholder</p>
+    </div>
+    <!-- wait box -->
+    <div id="waitingBox" class="box-div" style="display: block">
+      <p id="waitingLine">Waiting for game...</p>
+    </div>    
+    <!-- join box -->
+    <div id="joinBox" class="box-div">
+      <p id="joinLine">Joining the game</p>
+      <input id="joinInput" placeholder="Enter nickname" maxLength=18>
+      <button id="submitJoinButton" class="main-button">Submit</button>
+      <div id="customJoinConfirm" style="display: none;">
+        <button id="yesJoinButton" class="main-button">Confirm</button>
+        <button id="noJoinButton" class="main-button">Cancel</button>
+      </div>
+    </div>
+    <!-- invisible div to hold cards -->
+    <div id="cardDiv"> </div>
+    <!-- code -->
+    <script type="module" src="controlpad.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
