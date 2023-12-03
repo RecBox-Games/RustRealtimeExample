@@ -1,4 +1,4 @@
-# RustCardsExample
+# RustRealtimeExample
 This example is meant to show how a GameNite game can be developed in Rust with 
 ggez and tested natively. It also provides a basic framework for implementing a 
 realtime game with movement and world interaction.
